@@ -1,7 +1,6 @@
 class Type {
-    /*************** 1G *******************/
 
-    // Noms des espèces des pokemons dans le même ordre que le pokedex
+    // liste des noms des pokemons gen 1
     public static final String[] espece = {
         "Bulbizarre","Herbizarre","Florizarre","Salamèche","Reptincel","Dracaufeu",
         "Carapuce","Carabaffe","Tortank","Chenipan","Chrysacier","Papilusion",
@@ -29,13 +28,13 @@ class Type {
         "Minidraco","Draco","Dracolosse","Mewtwo","Mew"
     };
 
-    // Noms des différents types possibles pour les pokemons.
+    // les types possibles
     public static final String[] nomsType = {
         "NORMAL","FEU","EAU","PLANTE","ELECTRIK","GLACE","COMBAT","POISON",
         "SOL","VOL","PSY","INSECTE","ROCHE","SPECTRE","DRAGON","SANS"
     };
 
-    // Constantes pour une utilisation plus pratique des types
+    // constantes pour les types (plus facile a utiliser)
     public static final int NORMAL   = 0;
     public static final int FEU      = 1;
     public static final int EAU      = 2;
@@ -53,46 +52,40 @@ class Type {
     public static final int DRAGON   = 14;
     public static final int SANS     = 15;
 
-    // Valeur possibles des différentes efficacités.
-    public static final double NEUTRE        = 1.0;
-    public static final double INEFFICACE    = 0.0;
-    public static final double PAS_EFFICACE  = 0.5;
+    // les valeurs defficacite
+    public static final double NEUTRE         = 1.0;
+    public static final double INEFFICACE     = 0.0;
+    public static final double PAS_EFFICACE   = 0.5;
     public static final double SUPER_EFFICACE = 2.0;
 
-    // Tableau des efficacités de type. efficacite[typeAtt][typeDef]
+    // tableau des efficacites - ligne = attaquant, colonne = defenseur
     private static final double efficacite[][] = {
-        {NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, PAS_EFFICACE, INEFFICACE, NEUTRE}, // NORMAL
-        {NEUTRE, PAS_EFFICACE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, PAS_EFFICACE}, // FEU
-        {NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, PAS_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE}, // EAU
-        {NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, NEUTRE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE}, // PLANTE
-        {NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, PAS_EFFICACE, NEUTRE, NEUTRE, NEUTRE, INEFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, PAS_EFFICACE}, // ELECTRIK
-        {NEUTRE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE, NEUTRE, NEUTRE, SUPER_EFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE}, // GLACE
-        {SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE, NEUTRE, PAS_EFFICACE, PAS_EFFICACE, PAS_EFFICACE, SUPER_EFFICACE, INEFFICACE, NEUTRE}, // COMBAT
-        {NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, PAS_EFFICACE, PAS_EFFICACE, NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, PAS_EFFICACE, NEUTRE}, // POISON
-        {NEUTRE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE, INEFFICACE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE}, // SOL
-        {NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, NEUTRE}, // VOL
-        {NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE, PAS_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE}, // PSY
-        {NEUTRE, PAS_EFFICACE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE, PAS_EFFICACE, NEUTRE}, // INSECTE
-        {NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE}, // ROCHE
-        {INEFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, INEFFICACE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE}, // SPECTRE
-        {NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE} // DRAGON
+        {NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, PAS_EFFICACE, INEFFICACE, NEUTRE},
+        {NEUTRE, PAS_EFFICACE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, PAS_EFFICACE},
+        {NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, PAS_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE},
+        {NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, NEUTRE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE},
+        {NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, PAS_EFFICACE, NEUTRE, NEUTRE, NEUTRE, INEFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, PAS_EFFICACE},
+        {NEUTRE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE, NEUTRE, NEUTRE, SUPER_EFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE},
+        {SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE, NEUTRE, PAS_EFFICACE, PAS_EFFICACE, PAS_EFFICACE, SUPER_EFFICACE, INEFFICACE, NEUTRE},
+        {NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, PAS_EFFICACE, PAS_EFFICACE, NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, PAS_EFFICACE, NEUTRE},
+        {NEUTRE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE, INEFFICACE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE},
+        {NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, NEUTRE},
+        {NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE, PAS_EFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE},
+        {NEUTRE, PAS_EFFICACE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, NEUTRE, PAS_EFFICACE, NEUTRE},
+        {NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE, PAS_EFFICACE, NEUTRE, PAS_EFFICACE, SUPER_EFFICACE, NEUTRE, SUPER_EFFICACE, NEUTRE, NEUTRE, NEUTRE},
+        {INEFFICACE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, INEFFICACE, NEUTRE, NEUTRE, SUPER_EFFICACE, NEUTRE},
+        {NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, NEUTRE, SUPER_EFFICACE}
     };
 
-    /**
-     * Retourne le nom de l'espèce du pokemon en fonction de son numéro dans le pokedex.
-     * Exemple : Type.getEspece(94) retourne "Ectoplasma"
-     */
-    public static String getEspece(int numPokedex) {
-        if (numPokedex >= 1 && numPokedex <= espece.length) {
-            return espece[numPokedex - 1]; // pokedex commence à 1
+    // retourne le nom de lespece selon le numero
+    public static String getEspece(int num) {
+        if (num >= 1 && num <= espece.length) {
+            return espece[num - 1];
         }
         return "Missingno";
     }
 
-    /**
-     * Retourne le nom du type en fonction de son indice.
-     * Exemple : Type.getNomType(Type.EAU) retourne "eau"
-     */
+    // retourne le nom du type en minuscule
     public static String getNomType(int type) {
         if (type >= 0 && type < nomsType.length) {
             return nomsType[type].toLowerCase();
@@ -100,10 +93,7 @@ class Type {
         return "inconnu";
     }
 
-    /**
-     * Retourne l'efficacité lorsqu'un pokemon de type typeAtt attaque un pokemon de type typeDef.
-     * Exemple : Type.getEfficacite(Type.EAU, Type.FEU) retourne Type.SUPER_EFFICACE
-     */
+    // retourne lefficacite entre deux types
     public static double getEfficacite(int typeAtt, int typeDef) {
         if (typeAtt == SANS || typeDef == SANS) return NEUTRE;
         if (typeAtt >= 0 && typeAtt < efficacite.length &&
@@ -113,19 +103,14 @@ class Type {
         return NEUTRE;
     }
 
-    /**
-     * Retourne l'indice du type passé en paramètre sous forme de chaîne de caractère.
-     * Exemple : Type.getIndiceType("spectre") retourne Type.SPECTRE (13)
-     * Attention à la casse !
-     */
+    // retourne lindice du type a partir de son nom
     public static int getIndiceType(String type) {
         if (type == null) return SANS;
-        String typeUpper = type.toUpperCase();
         for (int i = 0; i < nomsType.length; i++) {
-            if (nomsType[i].equals(typeUpper)) {
+            if (nomsType[i].equals(type.toUpperCase())) {
                 return i;
             }
         }
-        return SANS; // type inconnu -> SANS
+        return SANS;
     }
 }
